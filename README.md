@@ -21,3 +21,10 @@ To run your tests
 ### 401 Data Structures, Code Challenges
 
 - Please follow the instructions specific to your 401 language, which can be found in the directory below, matching your course.
+
+### Table of content
+
+|  challange numer | challange |
+| ---------------  | --------- |
+| challange #2     | [array-reverse](./javascript/array-reverse/README.md)|
+| challange #3     | [array-binary-search](./javascript/array-binary-search/README.md)
