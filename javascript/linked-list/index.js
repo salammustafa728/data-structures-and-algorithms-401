@@ -1,5 +1,5 @@
-"use strict";
-const Node = require("./node");
+'use strict';
+const Node = require('./node');
 
 class LinkedList {
   constructor() {
@@ -48,10 +48,11 @@ class LinkedList {
         strLL += `{ ${current.value} } -> `;
         current = current.next;
       }
-      strLL+=`NULL`;
+      strLL += `NULL`;
       return strLL;
     } else return 'NULL';
   }
+
 }
 
 module.exports = LinkedList;

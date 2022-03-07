@@ -19,3 +19,7 @@ In The LL there's a 4 methods:
 * append to append in LL
 * includs to look for specific value in LL
 * toString method that print the LL values in specific format.
+
+
+
+
