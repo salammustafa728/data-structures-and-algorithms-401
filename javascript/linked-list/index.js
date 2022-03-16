@@ -95,24 +95,29 @@ class LinkedList {
   //   return current.value;
   // }
 
-  zipLists(l1, l2) {
-    let l3, tail, pred;
-    l3=new LinkedList('');
-    tail = l3;
-    while(l1 || l2){
-      if(l1 !== null) tail.value += l1.value;
-      if(l2 !== null) tail.value += l2.value;
-
-      tail.next = new LinkedList('');
-      pred = tail;
-      tail = tail.next;
-
-      l1 = l1 ? l1.next : l1;
-      l2 = l2 ? l2.next : l2;
+  zipLists(ll1, ll2) {
+    let curr1 = ll1.head;
+    let curr2 = ll2.head;
+    let point = curr1;
+    let x = 0;
+    while (curr1.next !== null && curr2.next !== null) {
+      if (x % 2 === 0) {
+        point.next = curr2;
+        curr2 = curr2.next;
+      } else {
+        point.next = curr1;
+        curr1 = curr1.next;
+      }
+      point = point.next;
+      x++;
+      if (!curr1) {
+        point.next = curr1;
+      }
+      if (!curr2) {
+        point.next = curr2;
+      }
+      return ll1;
     }
-    pred.next = null;
-
-    return l3;
   }
 }
 
