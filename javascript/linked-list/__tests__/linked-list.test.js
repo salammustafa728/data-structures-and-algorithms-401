@@ -124,17 +124,5 @@ describe('test zipLists', () => {
     ll2.insert(2);
     ll2.insert(3);
     console.log('zip lists  : ' + ll1.zipLists(ll1, ll2));
-    //  ll1 < ll2
-    // expect(ll1.zipLists(ll1, ll2)).toBe(
-    //   '{ 3 } -> { 3 } -> { 6 } -> { 2 } -> { 1 } -> NULL'
-    // );
-    // ll1 > ll2
-    // expect(ll1.zipLists(ll1, ll2)).toBe(
-    //   '{ 3 } -> { 3 } -> { 6 } -> { 2 } -> { 5 } -> NULL'
-    // );
-    //  ll1 && ll2 equal length
-    // expect(ll1.zipLists(ll1, ll2)).toBe(
-    //   '{ 3 } -> { 3 } -> { 6 } -> { 2 } -> { 5 } -> { 1 } -> NULL'
-    // );
   });
 });
