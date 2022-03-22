@@ -14,5 +14,7 @@ describe('test pesudo class', () => {
     PesudoQueuee.enqueue(5);
     PesudoQueuee.enqueue(8);
     expect(PesudoQueuee.s1.pop()).toBe(8);
+    PesudoQueuee.dequeue();
+    expect(PesudoQueuee.s1.size).toBe(1);
   });
 });
