@@ -7,15 +7,14 @@ function validateBrackets(str) {
     if (str[i] === '(' || str[i] === '{' || str[i] === '[') {
       s.push(str[i]);
     } else if (
-      (s.peek().includes('(') && str[i] === ')') ||
-      (s.peek().includes('{') && str[i] === '}') ||
-      (s.peek().includes('[') && str[i] === ']')
+      (s.peek()==='(' && str[i]===')') ||
+      (s.peek()==='{' && str[i]==='}' ) ||
+      (s.peek()==='[' && str[i]===']')
     ) {
       s.pop();
-      return true;
     } else return false;
   }
-  if (s.size) {
+  if (s.size===0) {
     return false;
   } else {
     return true;
