@@ -1,5 +1,6 @@
 'use strict';
 
+const { it } = require('eslint/lib/rule-tester/rule-tester');
 const BinaryTree = require('../binaryTree');
 const Node = require('../node');
 let tree = null;
@@ -28,5 +29,18 @@ describe('test binary tree', () => {
   });
   it('test root', () => {
     expect(tree.root.value).toBe(1);
+  });
+  it('test preOrder method',()=>{
+    let expectOut = [1,2,6,7,8,9,3,4,5];
+    let pre = tree.preOrder();
+    console.log(pre);
+    expect(pre).toEqual(expectOut);
+  });
+  it('test max value function',()=>{
+    tree.preOrder();
+    tree.findMaxVal(tree);
+    console.log(tree.findMaxVal(tree));
+    expect(tree.findMaxVal(tree)).toBeDefined();
+    expect(tree.findMaxVal(tree)).toEqual(9);
   });
 });

@@ -1,5 +1,4 @@
-"use strict";
-const Stack = require("../stackandqueue/stack");
+'use strict';
 
 class BinaryTree {
   constructor(root = null) {
@@ -7,36 +6,52 @@ class BinaryTree {
   }
   // root>> left >> right
   preOrder() {
-    let stackTree = new Stack();
-    let traverseNode = (node) => {
-      stackTree.push(node.value);
-      if (node.left) traverseNode(node.left);
-      if (node.right) traverseNode(node.right);
+    // let stackTree = new Stack();
+    let tree = [];
+    let traverseNodePre = (node) => {
+      tree.push(node.value);
+      if (node.left) traverseNodePre(node.left);
+      if (node.right) traverseNodePre(node.right);
     };
-    traverseNode(this.root);
-    return stackTree;
+    traverseNodePre(this.root);
+    return tree;
   }
+
   // left>>root>>right
   inOrderMethod() {
-    let stackTree = new Stack();
-    let traverseNode = (node) => {
-      if (node.left) traverseNode(node.left);
-      stackTree.push(node.value);
-      if (node.right) traverseNode(node.right);
+    let tree = [];
+    let traverseNodeInOr = (node) => {
+      if (node.left) traverseNodeInOr(node.left);
+      tree.push(node.value);
+      if (node.right) traverseNodeInOr(node.right);
     };
-    traverseNode(this.root);
-    return stackTree;
+    traverseNodeInOr(this.root);
+    return tree;
   }
   //left>> right>> root
   postOrderMethod() {
-    let stackTree = new Stack();
-    let traverseNode = (node) => {
-      if (node.left) traverseNode(node.left);
-      if (node.right) traverseNode(node.right);
-      stackTree.push(node.value);
+    let tree = [];
+    let traverseNodepost = (node) => {
+      if (node.left) traverseNodepost(node.left);
+      if (node.right) traverseNodepost(node.right);
+      tree.push(node.value);
     };
-    traverseNode(this.root);
-    return stackTree;
+    traverseNodepost(this.root);
+    return tree;
+  }
+  findMaxVal(tree) {
+    tree = this.preOrder();
+    let maxVal = tree[0];
+
+    if (this.root === null) {
+      return 'empty tree';
+    }
+    tree.forEach((element) => {
+      if (element > maxVal) {
+        maxVal = element;
+      }
+    });
+    return maxVal;
   }
 }
 
