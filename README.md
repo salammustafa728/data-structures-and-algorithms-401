@@ -12,5 +12,5 @@
 | challang #11      | [stack-queue-pseudo](./javascript/stackandqueue/stack-queue-pseudo.md) |
 | challang #12      | [AnimalShelter](./javascript/stackandqueue/AnimalShelter.md) |
 | challang #13      | [stack-queue-brackets](./javascript/stackandqueue/stack-queue-brackets.md) |
-| challang #15     | [trees]() |
+| challang #15     | [trees](./javascript/trees/trees.md) |
 | challang #16      | [tree-max](./javascript/trees/maxValMethodReadme.md) |
