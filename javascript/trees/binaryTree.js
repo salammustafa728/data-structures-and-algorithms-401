@@ -1,8 +1,9 @@
-'use strict';
+"use strict";
 
 class BinaryTree {
   constructor(root = null) {
     this.root = root;
+    this.treeChild = [];
   }
   // root>> left >> right
   preOrder() {
@@ -39,12 +40,34 @@ class BinaryTree {
     traverseNodepost(this.root);
     return tree;
   }
+
+
+  breadthFirst(tree) {
+    if (!this.root) return 'empty tree';
+    tree = [this.root];
+    let traverseTree = [];
+
+    while (tree.length) {
+      let nodetree = tree.shift();
+
+      if (nodetree.left) {
+        tree.push(nodetree.left);
+      }
+      if (nodetree.right) {
+        tree.push(nodetree.right);
+      }
+
+      traverseTree.push(nodetree.value);
+    }
+    return traverseTree;
+  }
+
   findMaxVal(tree) {
     tree = this.preOrder();
     let maxVal = tree[0];
 
     if (this.root === null) {
-      return 'empty tree';
+      return "empty tree";
     }
     tree.forEach((element) => {
       if (element > maxVal) {
@@ -54,5 +77,7 @@ class BinaryTree {
     return maxVal;
   }
 }
+
+
 
 module.exports = BinaryTree;

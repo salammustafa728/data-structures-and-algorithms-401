@@ -1,9 +1,9 @@
 'use strict';
 
 const BinaryTree = require('../binaryTree');
-
 const Node = require('../node');
 let tree = null;
+
 beforeAll(() => {
   let one = new Node(1);
   let two = new Node(2);
@@ -18,6 +18,7 @@ beforeAll(() => {
 
   tree = new BinaryTree(one);
 });
+
 describe('test binary tree', () => {
   it('test root', () => {
     expect(tree.root.value).toBe(1);
@@ -40,12 +41,18 @@ describe('test binary tree', () => {
     console.log(postOr);
     expect(postOr).toEqual(expectOut);
   });
-  it('test max value function',()=>{
-    tree.preOrder();
-    tree.findMaxVal(tree);
-    console.log(tree.findMaxVal(tree));
-    expect(tree.findMaxVal(tree)).toBeDefined();
-    expect(tree.findMaxVal(tree)).toEqual(6);
+  // it('test max value function',()=>{
+  //   tree.preOrder();
+  //   tree.findMaxVal(tree);
+  //   console.log(tree.findMaxVal(tree));
+  //   expect(tree.findMaxVal(tree)).toBeDefined();
+  //   expect(tree.findMaxVal(tree)).toEqual(6);
+  // });
+  it('test breadthFirst method',()=>{
+    let expectOut = [1,2,3,6,4];
+    let x= tree.breadthFirst(tree);
+    console.log(x, 'breadth');
+    expect(x).toEqual(expectOut);
   });
 });
 
