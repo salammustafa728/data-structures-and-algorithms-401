@@ -3,7 +3,6 @@
 class BinaryTree {
   constructor(root = null) {
     this.root = root;
-    this.treeChild = [];
   }
   // root>> left >> right
   preOrder() {
