@@ -16,3 +16,4 @@
 | challang #16      | [tree-max](./javascript/trees/maxValMethodReadme.md) |
 | challang #17      | [tree-breadth-first](./javascript/trees/BFS.md) |
 | challang #18      | [tree-fizz-buzz](./javascript/trees/k-ary-tree/Kray.md) |
+| challang #26      | [insertion-sort](./javascript/insertion-Sort/insertionSort.md) |
