@@ -18,7 +18,6 @@ const mergeSort = (arr) => {
 };
 
 const mergeArrays = (left, rigth,arr) => {
-  // let finalArr = [];
   let idxLeft = 0;
   let idxRigth = 0;
   let i = 0;
@@ -32,13 +31,6 @@ const mergeArrays = (left, rigth,arr) => {
       idxRigth++;
     }
     i++;
-    // if (left[idxLeft] < rigth[idxRigth]) {
-    //   arr.push(left[idxLeft]);
-    //   idxLeft++;
-    // } else {
-    //   arr.push(rigth[idxRigth]);
-    //   idxRigth++;
-    // }
   }
   if (idxLeft === left.length) {
     while (i < arr.length) {
@@ -53,8 +45,6 @@ const mergeArrays = (left, rigth,arr) => {
       i++;
     }
   }
-
-  // return finalArr.concat(left.slice(idxLeft)).concat(rigth.slice(idxRigth));
 };
 
 module.exports = mergeSort;
