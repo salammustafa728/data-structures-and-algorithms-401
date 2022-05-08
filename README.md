@@ -18,3 +18,4 @@
 | challang #18      | [tree-fizz-buzz](./javascript/trees/k-ary-tree/Kray.md) |
 | challang #26      | [insertion-sort](./javascript/sort/insertion-Sort/insertionSort.md) |
 | challang #27      | [merge-sort](./javascript/sort/Merge-Sort/mergeSort.md) |
+| challang #28      | [quick-sort](./javascript/sort/Quick-Sort/quickSort.md) |
