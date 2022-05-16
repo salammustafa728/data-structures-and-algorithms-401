@@ -20,3 +20,4 @@
 | challang #27      | [merge-sort](./javascript/sort/Merge-Sort/mergeSort.md) |
 | challang #28      | [quick-sort](./javascript/sort/Quick-Sort/quickSort.md) |
 | challang #30      | [Hash-Table](./javascript/HashTables/README.md) |
+| challang #31      | [hashmap-repeated-word](./javascript/HashTables/repeated-word/README.md) |
