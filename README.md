@@ -21,3 +21,4 @@
 | challang #28      | [quick-sort](./javascript/sort/Quick-Sort/quickSort.md) |
 | challang #30      | [Hash-Table](./javascript/HashTables/README.md) |
 | challang #31      | [hashmap-repeated-word](./javascript/HashTables/repeated-word/README.md) |
+| challang #32      | [tree-intersection](./javascript/treeIntersection/README.md) |
