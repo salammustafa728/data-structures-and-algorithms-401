@@ -1,7 +1,7 @@
-'use strict';
+"use strict";
 
 // const Vertex = require("./vertex");
-const Edge = require('./edge');
+const Edge = require("./edge");
 
 class Graph {
   constructor() {
@@ -14,7 +14,7 @@ class Graph {
 
   addEdge(start, end, weight) {
     if (!this.adjacenctList.has(start) || !this.adjacenctList.has(end)) {
-    //   console.log('one or both vertex is not existed');
+      //   console.log('one or both vertex is not existed');
       return;
     }
 
@@ -29,7 +29,7 @@ class Graph {
 
   getNeighbors(vertex) {
     if (!this.adjacenctList.has(vertex)) {
-    //   console.log('node does not exist');
+      //   console.log('node does not exist');
       return;
     }
     return this.adjacenctList.get(vertex);
@@ -47,27 +47,30 @@ class Graph {
     return this.adjacenctList.size > 0 ? this.adjacenctList.size : null;
   }
 
-  //   bft(startNode) {
-  //     let queue = [];
-  //     let visitedNodes = new Set();
+  breadthFirst(start) {
+    let queue = [];
+    let visited = new Set();
 
-  //     queue.push(startNode);
-  //     visitedNodes.add(startNode);
+    queue.push(start);
+    visited.add(start);
 
-  //     while (queue.length) {
-  //       const currentNode = queue.shift();
-  //       const neighbors = this.getNeighbors(currentNode);
-  //       for (let neighbor of neighbors) {
-  //         const neighborNode = neighbor.vertex;
-  //         if (visitedNodes.has(neighborNode)) {
-  //           continue;
-  //         } else {
-  //           visitedNodes.add(neighborNode);
-  //         }
-  //         queue.push(neighborNode);
-  //       }
-  //     }
-  //   }
+    let result= [start];
+    while (queue.length) {
+      const currentNode = queue.shift();
+      const neighbors = this.getNeighbors(currentNode);
+      for (let neighbor of neighbors) {
+        const neighborNode = neighbor.vertex;
+        if (visited.has(neighborNode)) {
+          continue;
+        } else {
+          result.push(neighborNode);
+          visited.add(neighborNode);
+        }
+        queue.push(neighborNode);
+      }
+      return result;
+    }
+  }
 
 }
 
