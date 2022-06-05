@@ -51,3 +51,46 @@ describe('Graph test', () => {
     expect(graph2.getNodes().length).toBe(0);
   });
 });
+
+/////////////////////////////////////////////////////////////////////////////////
+/// Depth first Test ///
+
+describe('Depth first', () => {
+  let myGraph = new Graph();
+  it('Depth first search search', () => {
+    myGraph.addVertex('A');
+    myGraph.addVertex('B');
+    myGraph.addVertex('C');
+    myGraph.addVertex('D');
+    myGraph.addVertex('E');
+    myGraph.addVertex('F');
+    myGraph.addVertex('G');
+    myGraph.addVertex('H');
+    myGraph.addEdge('A', 'B', 5);
+    myGraph.addEdge('A', 'D', 3);
+    myGraph.addEdge('B', 'C', 2);
+    myGraph.addEdge('B', 'D', 3);
+    myGraph.addEdge('C', 'G', 3);
+    myGraph.addEdge('D', 'E', 4);
+    myGraph.addEdge('D', 'H', 8);
+    myGraph.addEdge('D', 'F', 10);
+    myGraph.addEdge('H', 'F', 1);
+    expect(myGraph.depthFirst('A')).toEqual([
+      'A',
+      'B',
+      'C',
+      'G',
+      'D',
+      'E',
+      'H',
+      'F',
+    ]);
+    let graph3 = new Graph();
+    //check if it an empty tree
+    expect(graph3.depthFirst('')).toEqual('empty graph');
+    graph3.addVertex();
+    expect(graph3.depthFirst('')).toEqual(null);
+  });
+});
+
+/////////////////////////////////////////////////////////////////////////////////
