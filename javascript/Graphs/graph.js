@@ -1,7 +1,7 @@
-"use strict";
+'use strict';
 
 // const Vertex = require("./vertex");
-const Edge = require("./edge");
+const Edge = require('./edge');
 
 class Graph {
   constructor() {
@@ -54,7 +54,7 @@ class Graph {
     queue.push(start);
     visited.add(start);
 
-    let result= [start];
+    let result = [start];
     while (queue.length) {
       const currentNode = queue.shift();
       const neighbors = this.getNeighbors(currentNode);
@@ -72,6 +72,26 @@ class Graph {
     }
   }
 
+  depthFirst(statNode) {
+    if (this.adjacenctList.size === 0) {
+      return 'empty graph';}
+    if (!this.adjacenctList.has(statNode)) {
+      return null; }
+    let visited = [];
+    let result = [];
+    const traverse = (node, visited) => {
+      if (!node) return;
+      visited.push(node);
+      if (!result.includes(node)) {
+        result.push(node);}
+      const neighborsNode = this.getNeighbors(node);
+      for (let neighbor of neighborsNode) {
+        if (!visited.includes(neighbor.vertex)) {
+          traverse(neighbor.vertex, visited);
+        }}};
+    traverse(statNode, visited);
+    return result;
+  }
 }
 
 module.exports = Graph;
