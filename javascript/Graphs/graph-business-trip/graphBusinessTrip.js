@@ -10,7 +10,7 @@ const businessTrip = (graph, arrCityNames) => {
       }
     }
     if (cost === 0) {
-      return `null`;
+      return null;
     }
   }
   return `$ ${cost}`;

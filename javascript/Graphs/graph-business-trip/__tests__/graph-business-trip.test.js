@@ -32,6 +32,6 @@ describe('businessTrip', () => {
     expect(businessTrip(graph, ['Pandora', 'Arendelle', 'Metroville', 'Naboo'])).toBe("$ 275");
 
     //return null when there is no trip
-    expect(businessTrip(graph, ['Pandora', 'Narnia'])).toBe("null");
+    expect(businessTrip(graph, ['Pandora', 'Narnia'])).toBe(null);
   });
 });
